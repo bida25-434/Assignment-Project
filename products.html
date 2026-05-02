@@ -30,6 +30,38 @@
             color: #EFBF04;
             text-decoration: underline;
         }
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: gray;
+}
     </style>
 </head>
 
@@ -45,34 +77,40 @@
           </nav>
     </header>
     <main>
-        
-        <img src="t shirt.jpeg" alt="ODDSCOPE T-shirt" width="200">
-        <p>T-shirt</p>   
-        <p>P250</p>
-        <button onclick="addToCart('T-shirt', 250)">Add to Cart</button>
-        
-        <img src="track pants.jpeg" alt="ODDSCOPE Track Pants" width="200">
-        <p>Track Pants</p>
-        <p>P300</p>
-        <button onclick="addToCart('Track Pants', 300)">Add to Cart</button>
-
-        <img src="hoodie.jpeg" alt="ODDSCOPE Hoodie" width="200">
-        <p>Hoodie</p>
-        <p>P350</p>
-        <button onclick="addToCart('Hoodie', 350)">Add to Cart</button>
-        
-        <img src="bucket hat.jpeg" alt="ODDSCOPE Bucket hat" width="200">       
-        <p>Bucket hat</p>
-        <p>P150</p>
-        <button onclick="addToCart('Bucket Hat', 150)">Add to Cart</button>
-        
-        <p>Shorts</p>
-        <p>P250</p>
-        <button onclick="addToCart('Shorts', 250)">Add to Cart</button>
-        
-        <p>Baseball cap</p>
-        <p>P200</p>
-        <button onclick="addToCart('Baseball cap', 200)">Add to Cart</button>
+        <div class="product">
+            <img src="t shirt.jpeg" alt="ODDSCOPE T-shirt" width="200">
+            <p>T-shirt</p>   
+            <p>P250</p>
+            <button onclick="addToCart('T-shirt', 250)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="track pants.jpeg" alt="ODDSCOPE Track Pants" width="200">
+            <p>Track Pants</p>
+            <p>P300</p>
+            <button onclick="addToCart('Track Pants', 300)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="hoodie.jpeg" alt="ODDSCOPE Hoodie" width="200">
+            <p>Hoodie</p>
+            <p>P350</p>
+            <button onclick="addToCart('Hoodie', 350)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="bucket hat.jpeg" alt="ODDSCOPE Bucket hat" width="200">       
+            <p>Bucket hat</p>
+            <p>P150</p>
+            <button onclick="addToCart('Bucket Hat', 150)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <p>Shorts</p>
+            <p>P250</p>
+            <button onclick="addToCart('Shorts', 250)">Add to Cart</button>
+        </div>
+        <div claa="product">
+            <p>Baseball cap</p>
+            <p>P200</p>
+            <button onclick="addToCart('Baseball cap', 200)">Add to Cart</button>
+        </div>
     </main>
     <footer>
         <p>&copy; ODD SCOPE APPAREL STREETWEAR 2022</p>
