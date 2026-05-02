@@ -101,6 +101,7 @@
                 <input type="number" id="qty-tshirt" value="1" min="1">    
 
                 <button onclick="addToCart(
+                    'T-shirt.jpeg',
                     'T-shirt',
                     250,
                     document.getElementById('size-tshirt').value,
@@ -144,10 +145,10 @@
         <p>&copy; ODD SCOPE APPAREL STREETWEAR 2022</p>
     </footer>
     <script>
-    function addToCart(name, price, size, color, qty) {
+    function addToCart(image, name, price, size, color, qty) {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        cart.push({ name: name, price: price, size: size, color: color, quantity: qty });
+        cart.push({ image: image, name: name, price: price, size: size, color: color, quantity: qty });
 
         localStorage.setItem("cart", JSON.stringify(cart));
 
