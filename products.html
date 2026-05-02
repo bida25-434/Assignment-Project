@@ -83,7 +83,32 @@
                 <img src="t shirt.jpeg" alt="ODDSCOPE T-shirt" width="200">
                 <p>T-shirt</p>   
                 <p>P250</p>
-                <button onclick="addToCart('T-shirt', 250)">Add to Cart</button>
+                <label>Size:</label>
+                <select id="size-tshirt">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+
+                <label>Color:</label>
+                <select id="color-tshirt">
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Blue">Blue</option>
+                </select>
+
+                <label>Qty:</label>
+                <input type="number" id="qty-tshirt" value="1" min="1">
+
+                <button onclick="addToCart(
+                    'T-shirt',
+                    250,
+                    document.getElementById('size-tshirt').value,
+                    document.getElementById('color-tshirt').value,
+                    document.getElementById('qty-tshirt').value
+                )">
+                    Add to Cart
+                </button>
             </div>
             <div class="product">
                 <img src="track pants.jpeg" alt="ODDSCOPE Track Pants" width="200">
