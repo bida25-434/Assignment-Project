@@ -30,6 +30,7 @@
             color: #EFBF04;
             text-decoration: underline;
         }
+    </style>
 </head>
 
 <body>
@@ -44,30 +45,49 @@
           </nav>
     </header>
     <main>
+        
         <img src="t shirt.jpeg" alt="ODDSCOPE T-shirt" width="200">
         <p>T-shirt</p>   
         <p>P250</p>
+        <button onclick="addToCart('T-shirt', 250)">Add to Cart</button>
         
         <img src="track pants.jpeg" alt="ODDSCOPE Track Pants" width="200">
         <p>Track Pants</p>
         <p>P300</p>
+        <button onclick="addToCart('Track Pants', 300)">Add to Cart</button>
 
         <img src="hoodie.jpeg" alt="ODDSCOPE Hoodie" width="200">
         <p>Hoodie</p>
         <p>P350</p>
-        <img src="bucket hat.jpeg" alt="ODDSCOPE Bucket hat" width="200">
-                
+        <button onclick="addToCart('Hoodie', 350)">Add to Cart</button>
+        
+        <img src="bucket hat.jpeg" alt="ODDSCOPE Bucket hat" width="200">       
         <p>Bucket hat</p>
         <p>P150</p>
+        <button onclick="addToCart('Bucket Hat', 150)">Add to Cart</button>
+        
         <p>Shorts</p>
         <p>P250</p>
-
+        <button onclick="addToCart('Shorts', 250)">Add to Cart</button>
+        
         <p>Baseball cap</p>
         <p>P200</p>
+        <button onclick="addToCart('Baseball cap', 200)">Add to Cart</button>
     </main>
     <footer>
         <p>&copy; ODD SCOPE APPAREL STREETWEAR 2022</p>
     </footer>
+    <script>
+    function addToCart(name, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart.push({ name: name, price: price });
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert(name + " added to cart!");
+    }
+</script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
