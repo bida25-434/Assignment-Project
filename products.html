@@ -30,7 +30,6 @@
             color: #EFBF04;
             text-decoration: underline;
         }
-        /* Mobile first (default) */
         .products-container {
         display: grid;
         grid-template-columns: 1fr; 
@@ -65,15 +64,13 @@
         .product button:hover {
             background-color: gray;
         }
-        /* Tablets */
         @media (min-width: 600px) {
             .products-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         
-        /* Desktops */
-        @media (min-width: 900px) {
+        @media (width: 900px-1200px) {
             .products-container {
                 grid-template-columns: repeat(3, 1fr);
             }
