@@ -101,7 +101,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select onchange="changeProductImage('tshirt', this.value)">
+                <select onchange="changeTshirtColor('tshirt', this.value)">
                     <option value="Black">Black</option>
                     <option value="White">White</option>
                     <option value="Blue">Blue</option>
@@ -111,7 +111,7 @@
                 <input type="number" id="qty-tshirt" value="1" min="1" max="20">    
 
                 <button onclick="addToCart(
-                    't shirt.jpeg',
+                    't shirt-black.jpeg',
                     'T-shirt',
                     250,
                     document.getElementById('size-tshirt').value,
@@ -244,7 +244,7 @@
     }
     function changeTshirtColor(color) {
         document.getElementById("tshirt-image").src =
-            "images/tshirt-" + color + ".jpeg";
+            "tshirt-" + color + ".jpeg";
     }
     </script>
     <!-- Bootstrap JS and dependencies -->
