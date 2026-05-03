@@ -179,7 +179,33 @@
                 <img src="bucket hat.jpeg" alt="ODDSCOPE Bucket hat" width="200">       
                 <p>Bucket hat</p>
                 <p>P150</p>
-                <button onclick="addToCart('Bucket Hat', 150)">Add to Cart</button>
+                <label>Size:</label>
+                <select id="size-buckethat">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+
+                <label>Color:</label>
+                <select id="color-buckethat">
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Red">Red</option>
+                </select>
+
+                <label>Qty:</label>
+                <input type="number" id="qty-buckethat" value="1" min="1" max="20">    
+
+                <button onclick="addToCart(
+                    'bucket hat.jpeg',
+                    'T-shirt',
+                    250,
+                    document.getElementById('size-buckethat').value,
+                    document.getElementById('color-buckethat').value,
+                    document.getElementById('qty-buckethat').value
+                )">
+                    Add to Cart
+                </button>
             </div>
             <div class="product">
                 <p>Shorts</p>
