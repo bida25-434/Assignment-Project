@@ -31,6 +31,13 @@
             color: #EFBF04;
             text-decoration: underline;
         }
+        .empty-cart {
+            text-align: center;
+            font-size: 18px;
+            color: #777;
+            margin-top: 20px;
+            font-style: italic;
+        }
         #cart-items {
           display: grid;
           grid-template-columns: 1fr;
@@ -84,6 +91,9 @@
             background: red;
             color: white;
             border: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            cursor: pointer;
         }
         #checkout-btn {
           width: 100%;
@@ -154,7 +164,7 @@
     <main>
         <div id="cart-items"></div>
         <div id="subtotal"></div>
-        <button onclick="clearCart()">Clear Cart</button>
+        <button id="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
         <button id="checkout-btn">Proceed to Checkout</button>
     </main>
     <footer>
@@ -173,7 +183,7 @@
             let subtotal = 0;
             
             if (cart.length === 0) {
-                cartDiv.innerHTML = "<p>Your Cart is empty</p>";
+                cartDiv.innerHTML = "<p class='empty-cart'>Your Cart is empty</p>";
                 subtotalDiv.innerHTML = "Subtotal: P0";
             
                 // ✅ disable checkout button if empty
