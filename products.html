@@ -101,7 +101,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select id="color-tshirt" onchange="changeTshirtColor(this.value)">
+                <select id="color-tshirt" onchange="changeProductColor(this)">
                     <option value="Black">Black</option>
                     <option value="White">White</option>
                     <option value="Blue">Blue</option>
@@ -133,7 +133,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select id="color-trackpants" onchange="changeTrackpantsColor(this.value)">
+                <select id="color-tshirt" onchange="changeProductColor(this)">
                     <option value="Grey">Grey</option>
                     <option value="White">White</option>
                     <option value="Black">Black</option>
@@ -242,7 +242,17 @@
 
         alert(name + " added to cart!");
     }
-    function changeTshirtColor(color) {
+    function changeProductColor(selectElement) {
+        // find the parent product container
+        let productDiv = selectElement.closest(".product");
+
+        // find the image inside this product
+        let image = productDiv.querySelector("img");
+
+        // get selected color
+        let color = selectElement.value.toLowerCase();
+
+        // update image
         document.getElementById('tshirt-image').src =
             "t shirt-" + color.toLowerCase() + ".jpeg";
     }
