@@ -57,6 +57,7 @@
     </header>
     <main>
         <div id="cart-items"></div>
+        <div id="subtotal"></div>
         <button onclick="clearCart()">Clear Cart</button>
     </main>
     <footer>
@@ -68,6 +69,8 @@
     let subtotalDiv = document.getElementById("subtotal");
 
     function renderCart() {
+        if (!cartDiv || !subtotalDiv) return;
+
         cartDiv.innerHTML = "";
         let subtotal = 0;
 
