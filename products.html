@@ -246,16 +246,10 @@
         let productDiv = selectElement.closest(".product");
         let image = productDiv.querySelector("img");
 
+        let productName = productDiv.dataset.name;
         let color = selectElement.value.toLowerCase();
 
-        // detect product type from current image or name
-        let currentSrc = image.src;
-
-        if (currentSrc.includes("t shirt")) {
-            image.src = "t shirt-" + color + ".jpeg";
-        } else if (currentSrc.includes("track pants")) {
-            image.src = "track pants-" + color + ".jpeg";
-        }
+        image.src = productName + "-" + color + ".jpeg";
     }
     </script>
     <!-- Bootstrap JS and dependencies -->
