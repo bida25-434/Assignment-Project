@@ -89,7 +89,7 @@
     </header>
     <main>
         <div class="products-container">
-            <div class="product">
+            <div class="product" data-name="t shirt">
                 <img id="tshirt-image" src="t shirt-black.jpeg" alt="ODDSCOPE T-shirt" width="200">
                 <p>T-shirt</p>   
                 <p>P250</p>
@@ -121,8 +121,8 @@
                     Add to Cart
                 </button>
             </div>
-            <div class="product">
-                <img src="track pants-grey.jpeg" alt="ODDSCOPE Track Pants" width="200">
+            <div class="product" data-name="track pants">
+                <img id="trackpants-image" src="track pants-grey.jpeg" alt="ODDSCOPE Track Pants" width="200">
                 <p>Track Pants</p>
                 <p>P300</p>
                 <label>Size:</label>
@@ -133,7 +133,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select id="color-tshirt" onchange="changeProductColor(this)">
+                <select id="color-trackpants" onchange="changeProductColor(this)">
                     <option value="Grey">Grey</option>
                     <option value="White">White</option>
                     <option value="Black">Black</option>
