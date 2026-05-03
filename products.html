@@ -154,7 +154,7 @@
                 </button>
             </div>
             <div class="product">
-                <img src="hoodie-soft pink.jpeg" alt="ODDSCOPE Hoodie" width="200">
+                <img id="hoodie-image" src="hoodie-soft pink.jpeg" alt="ODDSCOPE Hoodie" width="200">
                 <p>Hoodie</p>
                 <p>P350</p>
                 <label>Size:</label>
@@ -165,7 +165,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select id="color-hoodie">
+                <select id="color-hoodie" onchange="changeProductColor(this)">
                     <option value="Soft pink">Soft pink</option>
                     <option value="White">White</option>
                     <option value="Black">Black</option>
@@ -175,7 +175,7 @@
                 <input type="number" id="qty-hoodie" value="1" min="1" max="20">    
 
                 <button onclick="addToCart(
-                    'hoodie.jpeg',
+                    document.getElementById('hoodie-image').src,
                     'T-shirt',
                     250,
                     document.getElementById('size-hoodie').value,
