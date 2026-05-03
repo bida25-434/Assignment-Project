@@ -101,7 +101,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select id="color-tshirt">
+                <select onchange="changeProductImage('tshirt', this.value)">
                     <option value="Black">Black</option>
                     <option value="White">White</option>
                     <option value="Blue">Blue</option>
@@ -241,6 +241,10 @@
         localStorage.setItem("cart", JSON.stringify(cart));
 
         alert(name + " added to cart!");
+    }
+    function changeTshirtColor(color) {
+        document.getElementById("tshirt-image").src =
+            "images/tshirt-" + color + ".jpeg";
     }
     </script>
     <!-- Bootstrap JS and dependencies -->
