@@ -243,18 +243,19 @@
         alert(name + " added to cart!");
     }
     function changeProductColor(selectElement) {
-        // find the parent product container
         let productDiv = selectElement.closest(".product");
-
-        // find the image inside this product
         let image = productDiv.querySelector("img");
 
-        // get selected color
         let color = selectElement.value.toLowerCase();
 
-        // update image
-        document.getElementById('tshirt-image').src =
-            "t shirt-" + color.toLowerCase() + ".jpeg";
+        // detect product type from current image or name
+        let currentSrc = image.src;
+
+        if (currentSrc.includes("t shirt")) {
+            image.src = "t shirt-" + color + ".jpeg";
+        } else if (currentSrc.includes("track pants")) {
+            image.src = "track pants-" + color + ".jpeg";
+        }
     }
     </script>
     <!-- Bootstrap JS and dependencies -->
