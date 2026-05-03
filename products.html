@@ -133,7 +133,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select id="color-trackpants">
+                <select id="color-trackpants" onchange="changeTrackpantsColor(this.value)">
                     <option value="Grey">Grey</option>
                     <option value="White">White</option>
                     <option value="Black">Black</option>
@@ -143,7 +143,7 @@
                 <input type="number" id="qty-trackpants" value="1" min="1" max="20">    
 
                 <button onclick="addToCart(
-                    'track pants.jpeg',
+                    document.getElementById('trackpants-image').src,
                     'Track pants',
                     300,
                     document.getElementById('size-trackpants').value,
