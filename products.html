@@ -30,9 +30,10 @@
             color: #EFBF04;
             text-decoration: underline;
         }
+        /* Mobile first (default) */
         .products-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: 1fr; 
         gap: 20px;
         padding: 20px;
         margin-bottom: 60px;
@@ -48,7 +49,7 @@
 
         .product img {
             width: 100%;
-            max-width: 200px;
+            max-width: 100%;
             height: auto;
         }
 
@@ -64,6 +65,20 @@
         .product button:hover {
             background-color: gray;
         }
+        /* Tablets */
+        @media (min-width: 600px) {
+            .products-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Desktops */
+        @media (min-width: 900px) {
+            .products-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
         footer {
             background-color: #333;
             color: white;
