@@ -85,19 +85,23 @@
             subtotal += itemTotal;
 
             cartDiv.innerHTML += `
-                <div>
-                    <img src="${item.image}" style="width:80px;">
-                    <div>
-                        <p>${item.name}</p>
-                        <p>Size: ${item.size}</p>
-                        <p>Price: P${item.price}</p>
-                        <p>Qty: ${item.quantity}</p>
-                        <p>Total: P${itemTotal}</p>
+                <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+                    <img src="${item.image}" width="80">
 
+                    <p>${item.name}</p>
+                    <p>Size: ${item.size} | Color: ${item.color}</p>
+                    <p>Price: P${item.price}</p>
+
+                    <p>
+                        Qty:
                         <button onclick="changeQty(${index}, -1)">-</button>
+                        ${item.quantity}
                         <button onclick="changeQty(${index}, 1)">+</button>
-                        <button onclick="removeItem(${index})">Remove</button>
-                    </div>
+                    </p>
+
+                    <p><b>Total: P${itemTotal}</b></p>
+
+                    <button onclick="removeItem(${index})">Remove</button>
                 </div>
         `    ;
         });
@@ -108,7 +112,7 @@
     }
 
     function changeQty(index, amount) {
-        cart[index].quantity += amount;
+        cart[index].quantity = parseInt(cart[index].quantity) + amount;
 
         if (cart[index].quantity <= 0) {
             cart.splice(index, 1);
