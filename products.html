@@ -101,7 +101,7 @@
                 </select>
 
                 <label>Color:</label>
-                <select onchange="changeTshirtColor('tshirt', this.value)">
+                <select id="color-tshirt" onchange="changeTshirtColor(this.value)">
                     <option value="Black">Black</option>
                     <option value="White">White</option>
                     <option value="Blue">Blue</option>
@@ -244,7 +244,7 @@
     }
     function changeTshirtColor(color) {
         document.getElementById("tshirt-image").src =
-            "tshirt-" + color + ".jpeg";
+            "t shirt-" + color + ".jpeg";
     }
     </script>
     <!-- Bootstrap JS and dependencies -->
