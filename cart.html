@@ -38,6 +38,9 @@
             align-items: center;
             gap: 15px;
         }
+        img {
+            width: 100px;
+        }
     </style>
 </head>
 
@@ -62,31 +65,51 @@
     <script>
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let cartDiv = document.getElementById("cart-items");
+    let subtotalDiv = document.getElementById("subtotal");
 
-    if (cart.length === 0) {
-        cartDiv.innerHTML = "<p>Your cart is empty.</p>";
-    } else {
-        cart.forEach(item => {
+    function renderCart() {
+        cartDiv.innerHTML = "";
+        let subtotal = 0;
+
+        if (cart.length === 0) {
+            cartDiv.innerHTML = "<p>Cart is empty</p>";
+            subtotalDiv.innerHTML = "Subtotal: P0";
+            return;
+        }
+
+        cart.forEach((item, index) => {
+            let itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
             cartDiv.innerHTML += `
                 <div>
-                    <img src="${item.image}" width="100">
-                    <p>${item.name} - P${item.price}</p>
-                    <p>Size: ${item.size} | Color: ${item.color} | Qty: ${item.quantity}</p>
-                    <button onclick="changeQty(${index}, -1)">-</button>
-                    <button onclick="changeQty(${index}, 1)">+</button>
-                    <button onclick="removeItem(${index})">Remove</button>
+                    <img src="${item.image}" style="width:80px;">
+                    <div>
+                        <p>${item.name}</p>
+                        <p>Size: ${item.size}</p>
+                        <p>Price: P${item.price}</p>
+                        <p>Qty: ${item.quantity}</p>
+                        <p>Total: P${itemTotal}</p>
+
+                        <button onclick="changeQty(${index}, -1)">-</button>
+                        <button onclick="changeQty(${index}, 1)">+</button>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    </div>
                 </div>
-    `    ;
-    });
+        `    ;
+        });
+
+        subtotalDiv.innerHTML = `<h3>Subtotal: P${subtotal}</h3>`;
+
         localStorage.setItem("cart", JSON.stringify(cart));
     }
 
     function changeQty(index, amount) {
-        cart[index].quantity = parseInt(cart[index].quantity) + amount;
+        cart[index].quantity += amount;
 
         if (cart[index].quantity <= 0) {
-            cart.splice(index, 1); // remove item if 0
-    }
+            cart.splice(index, 1);
+        }
 
         renderCart();
     }
@@ -96,12 +119,13 @@
         renderCart();
     }
 
-    renderCart();
     function clearCart() {
-        localStorage.removeItem("cart");
+        localStorage.clear();
         cart = [];
         renderCart();
     }
+
+    renderCart();
     </script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
