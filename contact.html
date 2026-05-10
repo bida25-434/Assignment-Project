@@ -87,6 +87,12 @@
         button:hover {
             opacity: 0.9;
         }
+        #success-message{
+            display: none;
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
         footer {
                background-color: #333;
                color: white;
@@ -129,19 +135,23 @@
             </div>
         </form>
       
-        <p id="success-message"></p>
+        <p id="success-message" style="display:none;"></p>
   </main>
   <footer>
       <p>&copy; ODD SCOPE APPAREL STREETWEAR 2022</p>
   </footer>
   <script>
-      function showMessage() {
-          
-      document.getElementById("success-message").innerHTML =
+  function showMessage() {
+      
+      const message = document.getElementById("success-message");
+      
+      message.innerHTML =
           "Thank you for contacting us. Your message has been submitted successfully!";
-          
-      document.getElementById("success-message").style.color = "green";
-          
+      
+      message.style.color = "green";
+      
+      message.style.display = "block";
+      
       return false;
   }
   </script>
