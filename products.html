@@ -234,15 +234,69 @@
                     Add to Cart
                 </button>
             </div>
-                <div class="product">
+            <div class="product" data-name="shorts">
+                <img id="shorts-image" src="shorts-brown.jpeg" alt="ODDSCOPE shorts" width="200">
                 <p>Shorts</p>
-                <p>P250</p>
-                <button onclick="addToCart('Shorts', 250)">Add to Cart</button>
+                <p>P350</p>
+                <label>Size:</label>
+                <select id="size-shorts">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+
+                <label>Color:</label>
+                <select id="color-shorts" onchange="changeProductColor(this)">
+                    <option value="Brown">Brown</option>
+                    <option value="Black">Black</option>
+                    <option value="Navy blue">Navy blue</option>
+                </select>
+
+                <label>Qty:</label>
+                <input type="number" id="qty-shorts" value="1" min="1" max="20">    
+
+                <button onclick="addToCart(
+                    document.getElementById('shorts-image').src,
+                    'shorts',
+                    250,
+                    document.getElementById('size-shorts').value,
+                    document.getElementById('color-shorts').value,
+                    document.getElementById('qty-shorts').value
+                )">
+                    Add to Cart
+                </button>
             </div>
-            <div class="product">
+            <div class="product" data-name="baseball cap">
+                <img id="hoodie-image" src="baseball cap-black.jpeg" alt="ODDSCOPE Baseball cap" width="200">
                 <p>Baseball cap</p>
                 <p>P200</p>
-                <button onclick="addToCart('Baseball cap', 200)">Add to Cart</button>
+                <label>Size:</label>
+                <select id="size-baseballcap">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+
+                <label>Color:</label>
+                <select id="color-baseballcap" onchange="changeProductColor(this)">
+                    <option value="Black">Black</option>
+                    <option value="Red">Red</option>
+                    <option value="Navy blue">Navy blue</option>
+                </select>
+
+                <label>Qty:</label>
+                <input type="number" id="qty-baseballcap" value="1" min="1" max="20">    
+
+                <button onclick="addToCart(
+                    document.getElementById('baseballcap-image').src,
+                    'Baseball cap',
+                    200,
+                    document.getElementById('size-baseballcap').value,
+                    document.getElementById('color-baseballcap').value,
+                    document.getElementById('qty-baseballcap').value
+                )">
+                    Add to Cart
+                </button>
             </div>
         </div>
     </main>
