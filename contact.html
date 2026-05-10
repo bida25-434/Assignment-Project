@@ -106,54 +106,45 @@
 </head>
 
 <body>
-  <header>
-      <h1>CONTACT US</h1>
-      <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="products.html">Products</a>
-          <a href="cart.html">Cart</a>
-          <a href="contact.html">Contact</a>
-      </nav>
-  </header>
-  <main class="container my-5">
-      
-        <form onsubmit="return showMessage()">
-            
+    <header>
+         <h1>CONTACT US</h1>
+         <nav>
+             <a href="index.html">Home</a>
+             <a href="about.html">About</a>
+             <a href="products.html">Products</a>
+             <a href="cart.html">Cart</a>
+             <a href="contact.html">Contact</a>
+         </nav>
+    </header>
+    <main class="container my-5">
+        <form action="acknowledgement.html" method="get"
+            onsubmit="showMessage()">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required>
-            
+
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" required>
-            
+
             <label for="message">Message</label>
             <textarea id="message" name="message" required></textarea>
-            
+
             <div class="buttons">
                 <button type="reset" class="clear-btn">Clear</button>
                 <button type="submit" class="submit-btn">Submit</button>
             </div>
         </form>
-      
-        <p id="success-message" style="display:none;"></p>
-  </main>
-  <footer>
-      <p>&copy; ODD SCOPE APPAREL STREETWEAR 2022</p>
-  </footer>
-  <script>
-  function showMessage() {
-      
-      const message = document.getElementById("success-message");
-      
-      message.innerHTML =
-          "Thank you for contacting us. Your message has been submitted successfully!";
-      
-      message.style.color = "green";
-      
-      message.style.display = "block";
-      
-      return false;
-  }
-  </script>
+    </main>
+    <footer>
+        <p>&copy; ODD SCOPE APPAREL STREETWEAR 2022</p>
+    </footer>
+    <script>
+    function showMessage() {
+    
+        document.getElementById("success-message").innerHTML =
+            "Your message has been submitted successfully!";
+    
+        document.getElementById("success-message").style.color = "green";
+    }
+    </script>
 </body>  
 </html>  
