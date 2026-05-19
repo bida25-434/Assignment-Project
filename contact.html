@@ -13,19 +13,34 @@
             padding: 0;
         }
         header {
-                background-color: #333;
-                color:  #EFBF04 ;
-                padding: 20;
-                top: 0;
-                text-align: center;
+            background-color: #333;
+            color: #EFBF04;
+            padding: 20;
+            top: 0;
+            text-align: center;
         }
-       nav a {
-            color: white;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            gap: 20px;
+        }
+        
+        nav a {
             text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+            transition: 0.4s ease-in-out;
         }
-        nav a:hover {
+        .navbar-nav .nav-link:hover  {
             color: #EFBF04;
             text-decoration: underline;
+            transition: 0.3s ease;
+        }
+        .navbar-brand {
+            color: #EFBF04;
+            margin: 0;
         }
         main {
             padding-bottom: 50px;
