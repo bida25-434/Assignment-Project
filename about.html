@@ -22,13 +22,28 @@
             top: 0;
             text-align: center;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            gap: 20px;
         }
-        nav a:hover {
+        
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+            transition: 0.4s ease-in-out;
+        }
+        .navbar-nav .nav-link:hover  {
             color: #EFBF04;
             text-decoration: underline;
+            transition: 0.3s ease;
+        }
+        .navbar-brand {
+            color: #EFBF04;
+            margin: 0;
         }
         main {
             padding: 20px;
