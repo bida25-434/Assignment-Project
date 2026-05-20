@@ -299,7 +299,14 @@
         
             // show checkout success message
             alert("Thank you for your order! Please fill in the contact form so we can email your quotation invoice.");
-        
+
+            // ✅ CLEAR CART HERE
+            localStorage.removeItem("cart");
+            localStorage.removeItem("checkoutCart");
+            
+            // optional: reset form or refresh page
+            location.reload();
+            
             // save cart
             localStorage.setItem("checkoutCart", JSON.stringify(cart));
         
