@@ -298,14 +298,14 @@
             checkoutBtn.textContent = "Processing...";
         
             // show checkout success message
-            alert("Checkout successful! Redirecting to checkout page...");
+            alert("Thank you for your order! Please fill in the contact form so we can email your quotation invoice.");
         
             // save cart
             localStorage.setItem("checkoutCart", JSON.stringify(cart));
         
             // redirect after short delay
             setTimeout(() => {
-                window.location.href = "checkout.html";
+                window.location.href = "contact.html";
             }, 1000);
         }
         
