@@ -199,7 +199,7 @@
         <div id="cart-items"></div>
         <div id="subtotal"></div>
         <button id="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-        <button id="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        <button id="checkout-btn" onclick="checkout()"Proceed to Checkout</button>
     </main>
     <footer>
          <p>&copy; ODD SCOPE APPAREL STREETWEAR 2022</p>  
@@ -287,22 +287,26 @@
         
         // ✅ CHECKOUT FUNCTION (NEW)
         function checkout() {
+        
             if (cart.length === 0) {
                 alert("Your cart is empty!");
                 return;
             }
-            
-            // optional: show loading state
+        
+            // disable button while processing
             checkoutBtn.disabled = true;
             checkoutBtn.textContent = "Processing...";
-            
-            // save final cart snapshot (optional but useful)
+        
+            // show checkout success message
+            alert("Checkout successful! Redirecting to checkout page...");
+        
+            // save cart
             localStorage.setItem("checkoutCart", JSON.stringify(cart));
-            
-            // redirect to checkout page
+        
+            // redirect after short delay
             setTimeout(() => {
                 window.location.href = "checkout.html";
-            }, 800);
+            }, 1000);
         }
         
         renderCart();
