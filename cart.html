@@ -299,6 +299,13 @@
         
             // show checkout success message
             alert("Thank you for your order! Please fill in the contact form so we can email your quotation invoice.");
+            
+            // redirect after short delay
+                setTimeout(() => {
+                    window.location.href = "contact.html";
+                }, 1000);
+            }
+        
 
             // ✅ CLEAR CART HERE
             localStorage.removeItem("cart");
@@ -306,12 +313,6 @@
             
             // save cart
             localStorage.setItem("checkoutCart", JSON.stringify(cart));
-        
-            // redirect after short delay
-            setTimeout(() => {
-                window.location.href = "contact.html";
-            }, 1000);
-        }
         
         renderCart();
     </script>
