@@ -304,9 +304,6 @@
             localStorage.removeItem("cart");
             localStorage.removeItem("checkoutCart");
             
-            // optional: reset form or refresh page
-            location.reload();
-            
             // save cart
             localStorage.setItem("checkoutCart", JSON.stringify(cart));
         
