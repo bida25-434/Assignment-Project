@@ -49,17 +49,27 @@
         }
         .contact-text {
             font-size: 1.1rem;
-            padding: 8px;
-            margin: 20px;
+            padding: 20px;
+            margin: 20px auto;
             max-width: 600px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            background: black;
-            color: white;
+            background: linear-gradient(135deg, #111, #222);
+            color: #fff;
+            border-left: 5px solid #EFBF04;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            line-height: 1.7;
+            transition: 0.3s ease;
+        }
+            
+        .contact-text:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
         }
         form {
-            width: device width;
+            width: 100%;
+            max-width: 600px;
             margin: auto;
-            margin-top: 50px;
+            margin-top: 15px;
             margin-bottom: 15px;
             background-color: white;
             padding: 25px;
