@@ -21,6 +21,8 @@
             padding: 20;
             top: 0;
             text-align: center;
+            position: fixed;
+            width: 100%;
         }
         nav {
             display: flex;
@@ -55,13 +57,13 @@
         }
         article:hover {
             transform: translateY(-5px);
-            
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: 0.3s ease;
         }
         h3 {
             color: #333;
             margin-bottom: 15px;
-            border-left: 5px;
+            border-left: 5px solid #EFBF04;
             padding-left: 12px;
         }
         p {
@@ -73,17 +75,13 @@
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
         footer p {
             color: white;
             text-align: center;
-        }
-        a {
-            color: black;
-            text-decoration: none;
         }
     </style>
 </head>
