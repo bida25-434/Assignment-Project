@@ -308,10 +308,11 @@
                 }, 1000);
             }
         
-
             // ✅ CLEAR CART HERE
             localStorage.removeItem("cart");
             localStorage.removeItem("checkoutCart");
+
+            location: reload;
             
             // save cart
             localStorage.setItem("checkoutCart", JSON.stringify(cart));
